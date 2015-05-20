@@ -2,12 +2,16 @@
 class Users extends \_DefaultController {
 
 	public function Users(){
+		$this->baseHref="users";
 		$this->title="Utilisateurs";
-		$this->model="User";
+		$this->className="User";
 	}
 
 	public function frm($id=NULL){
-		$user=$this->getInstance($id);
+		$user=new User();
+		if(isset($id) && sizeof($id)>0){
+			$user=DAO::getOne("User", $id[0]);
+		}
 		$this->loadView("user/vAdd",array("user"=>$user));
 	}
 

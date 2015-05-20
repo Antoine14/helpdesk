@@ -1,7 +1,8 @@
 <?php
 class Messages extends \_DefaultController {
 	public function Messages(){
+		$this->baseHref="messages";
 		$this->title="Messages";
-		$this->model="Message";
+		$this->className="Message";
 	}
 }
