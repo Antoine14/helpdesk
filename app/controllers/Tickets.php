@@ -25,4 +25,8 @@ class Tickets extends \_DefaultController {
 				})");
 		}
 	}
+	public function frm($id=NULL){
+		$ticket=$this->getInstance($id);
+		$this->loadView("ticket/vAdd",array("ticket"=>$ticket));
+	}
 }
