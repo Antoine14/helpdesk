@@ -27,6 +27,10 @@ class Tickets extends \_DefaultController {
 	}
 	public function frm($id=NULL){
 		$ticket=$this->getInstance($id);
+		#$categories=DAO::getAll("Categorie");
+		#$listcategories=Gui::select($categories, $catID);		
 		$this->loadView("ticket/vAdd",array("ticket"=>$ticket));
 	}
+	
+	
 }
