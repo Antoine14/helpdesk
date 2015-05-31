@@ -41,8 +41,9 @@ class _DefaultController extends \BaseController {
 	}
 
 	public function frm($id=NULL){
-		echo "Non implémenté...";
+	
 	}
+	
 
 	protected function setValuesToObject(&$object){
 		RequestUtils::setValuesToObject($object,$_POST);
