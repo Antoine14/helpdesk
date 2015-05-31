@@ -5,10 +5,13 @@
 <div class="form-group">
 	<input type="hidden" name="id" value="<?php echo $ticket->getId()?>">
 <<<<<<< HEAD
-	<input type="text" name="titre" value="<?php echo $user->getTitre()?>" placeholder="type" class="form-control">
+	<input type="text" name="type" value="<?php echo $ticket->getType()?>" placeholder="type" class="form-control">
 =======
-	<input type="text" name="titre" value="<?php echo $user->getTitre()?>" placeholder="Entrez un titre " class="form-control">
-	<input type="text" name="description" value="<?php echo $user->getDescription()?>" placeholder="Décrivez votre situation " class="form-control">
+	<input type="text" name="titre" value="<?php echo $ticket->getTitre()?>" placeholder="Entrez un titre " class="form-control">
+	<input type="text" name="description" value="<?php echo $ticket->getDescription()?>" placeholder="Décrivez votre situation " class="form-control">
+	<input type="text" name="utilisateur" value="<?php echo $ticket->getUser()?>" class="form-control">
+	<input type="text" name="Date" value="<?php echo $ticket->getDateCreation()?>" class="form-control">
+	<input type="text" name="statut" value="<?php echo $ticket->getStatut()?>" class="form-control">
 >>>>>>> origin/master
 </div>
 <div class="form-group">
