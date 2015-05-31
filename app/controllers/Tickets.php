@@ -34,7 +34,7 @@ class Tickets extends \_DefaultController {
 				$cat=$ticket->GetCategorie()->getId();
 			}
 			$list=Gui::select($categories, $cat,"Sélectionner une catégorie...");
-			/*$this->loadView("ticket/vAdd",array("ticketTypes" => Tickets::getTypes(),"categories" => $categories,"ticket" => $ticket,"statuts" => $statuts));*/
+			$this->loadView("ticket/vAdd",array("ticketTypes" => $ticket::getType(),"categories" => $categories,"ticket" => $ticket,"statuts" => $statuts));
 			$this->loadView("ticket/vAdd",array("select"=>$list,"ticket"=>$object));
 	}		
 }
