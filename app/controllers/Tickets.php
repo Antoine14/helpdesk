@@ -25,8 +25,24 @@ class Tickets extends \_DefaultController {
 				})");
 		}
 	}
-	public function frm($id=NULL){
+	
+	public function frm($id=null){
 		$ticket=$this->getInstance($id);
 		$this->loadView("ticket/vAdd",array("ticket"=>$ticket));
 	}
+	
+	/* (non-PHPdoc)
+	 * @see _DefaultController::setValuesToObject()
+	 */
+	protected function setValuesToObject(&$object) {
+		parent::setValuesToObject($object);
+		if(isset($_POST["idCategorie"])){
+			$cat=DAO::getOne("Categorie", $_POST["idCategorie"]);
+			$object->setCategorie($cat);
+		}
+		$object->setUser(Auth::getUser());
+		$statut=DAO::getOne("Statut",1);
+		$object->setStatut($statut);
+		
+	}	
 }

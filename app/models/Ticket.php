@@ -12,8 +12,9 @@ class Ticket extends Base{
 	 * @ManyToOne
 	 * @JoinColumn(name="idCategorie",className="Categorie",nullable=true)
 	 */
+	
 	private $categorie;
-
+	
 	/**
 	 * @ManyToOne
 	 * @JoinColumn(name="idUser",className="User",nullable=false)
@@ -115,8 +116,14 @@ class Ticket extends Base{
 	}
 
 	public function toString(){
-		return $this->titre." - ".$this->categorie." (".$this->statut->toString().")";
+		if($this->categorie== NULL){
+			$this->categorie= "1";}
+			if($this->statut== NULL){
+				$this->statut= "1";}
+		 return $this->titre." - ".$this->categorie." (".$this->statut.")";
 	}
+
+	
 
 	public function getMessages() {
 		return $this->messages;
