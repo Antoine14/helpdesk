@@ -125,5 +125,7 @@ class _DefaultController extends \BaseController {
 	public function messageInfo($message,$timerInterval=0,$dismissable=true){
 		$this->_showMessage($message,"info",$timerInterval,$dismissable);
 	}
-
+	public function notUser(){
+		$this->messageWarning("Vous devez etre connecte pour continuer");
+	}
 }
