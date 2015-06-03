@@ -27,11 +27,8 @@ class Tickets extends \_DefaultController {
 	}
 	
 	public function frm($id=null){
-		if(Auth::getUser()!=NULL) {
-			$ticket=$this->getInstance($id);
-			$this->loadView("ticket/vAdd",array("ticket"=>$ticket));
-		}
-		else {$this->notUser();}
+		$ticket=$this->getInstance($id);
+		$this->loadView("ticket/vAdd",array("ticket"=>$ticket));
 	}
 	
 	/* (non-PHPdoc)
