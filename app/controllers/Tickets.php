@@ -25,7 +25,6 @@ class Tickets extends \_DefaultController {
 				})");
 		}
 	}
-<<<<<<< HEAD
 	
 	public function frm($id=null){
 		$ticket=$this->getInstance($id);
@@ -47,18 +46,3 @@ class Tickets extends \_DefaultController {
 		
 	}	
 }
-=======
-	public function frm($id=NULL){
-			$ticket=$this->getInstance($id);
-			$categories=DAO::getAll("Categorie");
-			$statuts = DAO::getAll("Statut");
-			$cat=-1;
-			if($ticket->getCategorie()!=null){
-				$cat=$ticket->GetCategorie()->getId();
-			}
-			$list=Gui::select($categories, $cat,"Sélectionner une catégorie...");
-			$this->loadView("ticket/vAdd",array("ticketTypes" => $ticket::getType(),"categories" => $categories,"ticket" => $ticket,"statuts" => $statuts));
-			$this->loadView("ticket/vAdd",array("select"=>$list,"ticket"=>$object));
-	}		
-}
->>>>>>> origin/master

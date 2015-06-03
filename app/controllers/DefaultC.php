@@ -31,6 +31,12 @@ class DefaultC extends \BaseController {
 		$this->index();
 	}
 
+	public function test(){
+		$this->loadView("main/vHeader",array("infoUser"=>Auth::getInfoUser()));
+		$this->loadView("main/vtest");
+		$this->loadView("main/vFooter");
+		
+	}
 	public function ckEditorSample(){
 		$this->loadView("main/vHeader",array("infoUser"=>Auth::getInfoUser()));
 		echo "<div class='container'>";

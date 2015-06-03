@@ -1,34 +1,23 @@
 <form method="post" action="tickets/update">
 <fieldset>
 <legend>Ajouter/modifier un ticket</legend>
-<!-- <div class="alert alert-info">Création de ticket<?php echo $ticket->toString()?></div> -->
+<div class="alert alert-info">CrÃ©ation de ticket</div> 
 <div class="form-group">
 	<input type="hidden" name="id" value="<?php echo $ticket->getId()?>">
-<<<<<<< HEAD
-<select class="form-control" name="idC"ategorie">
-				<option>Categorie</option>
-			<?php foreach ($user as $u) {echo "<option value=".$u->getId().">".$u->getLibelle()."</option>";}; ?>
-			</select>
-	<input type="text" name="type" value="<?php echo $ticket->getType()?>" placeholder="type" class="form-control">
+
+	<select type="text" name="type" class="form-control"><?php echo Gui::select(array("incident","demande"))?></select>
+	<select class="form-control" name=idCategorie><?php echo Gui::select(DAO::getAll("Categorie"), $ticket->getCategorie(),"selectionner une categorie")?></select>
 	Titre:
 	<input type="text" name="titre" value="<?php echo $ticket->getTitre()?>" placeholder="Entrez un titre " class="form-control">
 	Description:
 	<input type="text" name="description" value="<?php echo $ticket->getDescription()?>" placeholder="Decrivez votre situation " class="form-control">
 	Utilisateur:
-	<input type="text" name="utilisateur" value="<?php echo $ticket->getUser()?>" class="form-control">
-	Date de création:
-	<input type="text" name="Date" value="<?php echo $ticket->getDateCreation()?>" class="form-control">
+	<input type="text" name="utilisateur" value="<?php echo Auth::getUser()?>" class="form-control" readonly>
+	Date de crÃ©ation:
+	<input type="text" name="Date" value="<?php echo date("d-m-Y H:i")?>" class="form-control" readonly>
 	Statut:
-	<input type="text" name="statut" value="<?php echo $ticket->getStatut()?>" class="form-control">
+	<input type="text" name="statut" value="<?php echo $ticket->getStatut()?>" class="form-control"readonly>
 
-=======
-<<<<<<< HEAD
-	<input type="text" name="titre" value="<?php echo $user->getTitre()?>" placeholder="type" class="form-control">
-=======
-	<input type="text" name="titre" value="<?php echo $user->getTitre()?>" placeholder="Entrez un titre " class="form-control">
-	<input type="text" name="description" value="<?php echo $user->getDescription()?>" placeholder="Décrivez votre situation " class="form-control">
->>>>>>> origin/master
->>>>>>> origin/master
 </div>
 <div class="form-group">
 	<input type="submit" value="Valider" class="btn btn-default">
