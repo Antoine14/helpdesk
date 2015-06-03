@@ -7,7 +7,7 @@ class Faqs extends \_DefaultController {
 		$this->model="Faq";
 	}
    
-  /*  public function article($id=null) {
+   public function article($id=null) {
         if(Auth::isAuth()) {
             $article = DAO::getOne($this->model, $id[0]);
             if (empty($article))
@@ -34,7 +34,7 @@ class Faqs extends \_DefaultController {
         }
         else
             $this->messageDisconnected();
-    }*/
+    }
     public function frm($id=NULL) {
         if(Auth::isAdmin()) {
             if(!empty($id)) {
